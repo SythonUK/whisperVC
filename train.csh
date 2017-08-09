@@ -63,8 +63,8 @@ set SYNTHESIS="python scripts/synthesis.py"
 
 # flags
 set COMPL=1
-set EXTFT=0
-set MKDAT=0
+set EXTFT=1
+set MKDAT=1
 set TRGEN=1
 set SYNTH=1
 
