@@ -2,7 +2,6 @@ import sys
 import os
 import argparse
 import numpy as np
-from matplotlib import pylab as plt
 import glob
 import time
 import chainer
@@ -13,7 +12,6 @@ import h5py
 import cupy
 from scipy.io import wavfile
 import pysptk
-import librosa
 from pysptk.synthesis import MLSADF, Synthesizer
 import hts_mlpg
 import pyworld

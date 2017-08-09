@@ -4,7 +4,6 @@ import sys
 import os
 import h5py
 import glob
-from matplotlib import pylab as plt
 
 def parse_args():
     parser = argparse.ArgumentParser()
