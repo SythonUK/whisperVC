@@ -40,7 +40,7 @@ def weighted_sum(x, w, y):
 
 class in2out_highway(chainer.Chain):
     def __init__(self, n_in, n_units, n_out):
-        super(feedforward_w_highway, self).__init__(
+        super(in2out_highway, self).__init__(
             lin   = L.Linear(n_in, n_units),
             lh1   = L.Linear(n_units, n_units),
             lh2   = L.Linear(n_units, n_units),
