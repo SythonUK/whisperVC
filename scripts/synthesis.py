@@ -179,7 +179,7 @@ def main():
         wsp = np.ones(sp.shape[1]) * np.exp(1)
         wsp[:num] = w
         sp_w = np.exp(np.log(sp) + np.log(wsp))
-        x_syn = pyworld.synthesize(f0, sp, ap, fs, args.shiftl)
+        x_syn = pyworld.synthesize(f0, sp_w, ap, fs, args.shiftl)
 
     # output wav file
     wavfile.write(args.opt, sr, x_syn.astype(np.int16))
