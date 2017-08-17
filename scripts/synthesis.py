@@ -143,7 +143,6 @@ def main():
     # extract mel-cepstral coefficients
     sp = pyworld.cheaptrick(x, f0, timeaxis, fs, f0_floor=args.minf0_s, fft_size=fftl)
     mc = pysptk.sp2mc(sp, order=args.omc, alpha=alpha)
-    plt.plot(mc[:, 1])
 
     # convert F0 (linear transformation)
     mean_src = stats_hdf5['src']['f0']['mean']
