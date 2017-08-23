@@ -1,3 +1,11 @@
+#################################################################
+#                     extract_features.py                       #
+#################################################################
+#               Copyright (c) 2017 Yuki Saito                   #
+#      This software is released under the MIT License.         #
+#       http://opensource.org/licenses/mit-license.php          #
+#################################################################
+
 import numpy as np
 import pysptk
 from scipy.io import wavfile

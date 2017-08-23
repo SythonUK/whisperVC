@@ -1,3 +1,11 @@
+#################################################################
+#                        synthesis.py                           #
+#################################################################
+#               Copyright (c) 2017 Yuki Saito                   #
+#      This software is released under the MIT License.         #
+#       http://opensource.org/licenses/mit-license.php          #
+#################################################################
+
 import sys
 import os
 import argparse

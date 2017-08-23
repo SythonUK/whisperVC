@@ -1,3 +1,10 @@
+#################################################################
+#                           chol.pyx                            #
+#################################################################
+#           Copyright (c) 2016 Shinnosuke Takamichi             #
+#      This software is released under the MIT License.         #
+#       http://opensource.org/licenses/mit-license.php          #
+#################################################################
 
 import numpy as np
 
@@ -33,7 +40,7 @@ def calc_P(R, w):
    g[0, 0] = 1.0 / R[0, 0]
    hold = np.zeros(T)
    P = np.zeros(R.shape)
-   
+
    for t in range(1, T):
       hold *= 0.0
       for j in range(1, w):
@@ -41,10 +48,10 @@ def calc_P(R, w):
             hold[0:t+1] += R[t, t - j] * g[t - j, 0:t+1]
       hold[t] -= 1.0
       g[t, 0:t+1] = - hold[0:t+1] / R[t, t]
-      
+
    P[T - 1, :] = g[T - 1, :] / R[T - 1, T - 1]
    R = R.T
-   
+
    for t in range(T - 2, -1, -1):
       hold *= 0.0
       for j in range(1, w):
@@ -69,7 +76,7 @@ def my_fb_mat(R, r, w):
          if (t - j >= 0) and (R[t][t - j] != 0.0):
             hold += R[t][t - j] * g[t - j, :]
       g[t, :] = (r[t, :] - hold) / R[t][t]
-      
+
    # backward
    P[T - 1, :] = g[T - 1, :] / R[T - 1][T - 1]
    Ti = range(0, T - 1)
@@ -97,7 +104,7 @@ def forward(R, r, g, w):
          if (t - j >= 0) and (R[t - j][j] != 0.0):
             hold += R[t - j][j] * g[t - j]
       g[t] = (r[t] - hold) / R[t][0]
- 
+
 def backward(R, r, g, w, c):
    w = 2
    T = len(r)
@@ -110,4 +117,3 @@ def backward(R, r, g, w, c):
          if (t + j < T) and (R[t][j] != 0.0):
             hold += R[t][j] * c[t + j]
       c[t] = float(g[t] - hold) / R[t][0]
-

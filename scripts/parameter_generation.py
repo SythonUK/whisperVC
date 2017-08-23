@@ -1,14 +1,16 @@
+#################################################################
+#                  patameter_generation.py                      #
+#################################################################
+#               Copyright (c) 2017 Yuki Saito                   #
+#      This software is released under the MIT License.         #
+#       http://opensource.org/licenses/mit-license.php          #
+#################################################################
+
 import numpy as np
 import cupy
 from chainer import function, cuda
-from chainer.utils import type_check
 
 class ParameterGeneration(function.Function):
-    """
-    Parameter generation based on
-    Maximum-Likelihood criterion
-    """
-
     def __init__(self, R, n_win=2):
         self.R = R
         self.n_win = n_win
@@ -53,9 +55,4 @@ class ParameterGeneration(function.Function):
         return gx,
 
 def parameter_generation(R, O):
-    """
-    Parameter Generation.
-     R: constant matrix for parameter generation
-     O: predicted parameters (including dynamic features: delda, delta-delta)
-    """
     return ParameterGeneration(R)(O)

@@ -1,3 +1,11 @@
+#################################################################
+#                      make_paradata.py                         #
+#################################################################
+#     Copyright (c) 2017 Shinnosuke Takamichi & Yuki Saito      #
+#      This software is released under the MIT License.         #
+#       http://opensource.org/licenses/mit-license.php          #
+#################################################################
+
 import numpy as np
 import argparse
 import sys

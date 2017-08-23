@@ -1,3 +1,10 @@
+#################################################################
+#                        hts_mlpg.pyx                           #
+#################################################################
+#           Copyright (c) 2016 Shinnosuke Takamichi             #
+#      This software is released under the MIT License.         #
+#       http://opensource.org/licenses/mit-license.php          #
+#################################################################
 
 import scipy
 from sklearn import mixture
